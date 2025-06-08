@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Out</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign out of the Classroom Management System">
+    <link rel="stylesheet" href="Assets/style.css"> <!-- Link to your main CSS file -->
+    <link rel="stylesheet" href="Assets/NEW-LOGO_WHITE-BACKGROUND-1024x1024">
+</head>
+<body>
+      <nav class="navbar">
+            <div class="logo centered">
+                <!-- Logo linking back to the main page -->
+                <a href="main.html">
+                    <img src="Assets/logo.webp" alt="School Logo">
+                </a>
+            </div>
+    <div class="signout-container">
+        <h1>Sign Out</h1>
+        <p>Are you sure you want to sign out?</p>
+        <form action="sign_in.html" method="get" onsubmit="handleSignOut(event)">
+            <button type="submit">Sign Out</button>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

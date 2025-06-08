@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Management System - Instructor</title>
+    <meta name="description" content="Classroom Management System for instructors to manage attendance and reports.">
+    <meta name="keywords" content="Classroom Management, Instructor, Attendance, Reports">
+    <link rel="stylesheet" href="Assets/style.css"> <!-- Link to your main CSS file -->
+    <link rel="shortcut icon" href="Assets/NEW-LOGO_WHITE-BACKGROUND-1024x1024.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo centered">
+                <!-- Logo linking back to the main page -->
+                <a href="main.html">
+                    <img src="Assets/logo.webp" alt="School Logo">
+                </a>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li> <!-- Current page, or link to main.html -->
+                <li><a href="instructor list.html">Instructor List</a></li>
+                <li><a href="report.html">Report</a></li>
+                <!-- Sign-in button with a class for styling -->
+                <li><button class="btn"><a href="sign_in.html">Sign in</a></button></li>
+                <li><button class="btn"><a href="sign_out.html">Sign out</a></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Classroom Management</h2>
+        <p>Fill in the form below to record your attendance.</p>
+
+        <!-- Attendance Form for Instructors -->
+        <form id="attendanceForm">
+            <label for="instructorName">Instructor Name:</label>
+            <input type="text" id="instructorName" required>
+
+            <div style="display: flex; gap: 20px;">
+                <div style="flex:1;">
+                    <label for="timeIn">Time In:</label>
+                    <input type="time" id="timeIn">
+                    <button type="button" id="timeInBtn">Time In</button>
+                </div>
+                <div style="flex:1;">
+                    <label for="timeOut">Time Out:</label>
+                    <input type="time" id="timeOut">
+                    <button type="button" id="timeOutBtn">Time Out</button>
+                </div>
+            </div>
+        </form>
+        <!-- Additional content like tables can be added here if needed for this page -->
+    </div>
+    <script src="main.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
