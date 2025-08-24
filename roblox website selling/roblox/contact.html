@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="121837896.jpg" type="image/x-icon">
+    <title>Contact us</title>
+</head>
+<body>
+    <header>
+        <h1>welcome to blazing store</h1>
+        <p>Explore and buy the latest Roblox Pets!</p>
+        <nav role="navigation" aria-label="Main Navigation">
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+<section class="bg-white rounded-xl shadow-xl p-8 mb-10" id="support">
+    <h2 class="text-4xl font-bold text-center mb-8 text-blue-700">Buy the product</h2>
+    <p class="text-center text-lg mb-6 text-gray-600">Have questions or need assistance? Contact us!</p>
+    <form id="support-form" class="max-w-md mx-auto space-y-6" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="cc836791-a4a7-4715-ada1-4d8f685fa448">
+        <div>
+            <label for="support-name" class="block text-gray-700 text-lg font-medium mb-2">Your Name</label>
+            <input type="text" id="support-name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="example.john,ivan" required>
+        </div>
+        <div>
+            <label for="support-email" class="block text-gray-700 text-lg font-medium mb-2">Your Email</label>
+            <input type="email" id="support-email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="you@example.com" required>
+        </div>
+        <div>
+            <label for="support-message" class="block text-gray-700 text-lg font-medium mb-2">Message</label>
+            <textarea id="support-message" name="message" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="How can we help you today?" required></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-all transform hover:scale-105 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-300">
+            Send Message
+        </button>
+        <div id="support-message-status" class="text-center mt-4 text-lg font-medium"></div>
+    </form>
+</section>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEmail() {
+        // The secure token property name should be 'SecureToken'
+        // A space after the colon is good practice, but not required
+        Email.send({
+            Host : "s1.maildns.net",
+            Username : "username",
+            Password : "password",
+            To: '',
+            From: document.getElementById("email").value,
+            Subject: "New Contact Form Enquiry",
+            Body: "Name: " + document.getElementById("name").value + 
+                  "<br> Email: " + document.getElementById("email").value +
+                  "<br> Message: " + document.getElementById("message").value
+        }).then(
+            // The success message should be correctly spelled
+            message => alert("Message Sent Successfully")
+        );
+    }
+</script>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 text-center shadow-inner mt-auto">
+        <p>&copy; 2025-2026 Roblox Market. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

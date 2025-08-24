@@ -1,0 +1,180 @@
+/* =======================
+   1. Fonts & Reset
+======================= */
+/* Import Google Fonts - Inter is a good default for modern UIs */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Basic Reset & Font Application */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* =======================
+   2. Modal Styles
+======================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure modal is on top */
+    opacity: 0; /* Start hidden for transition */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-overlay.hidden {
+    pointer-events: none; /* Disable interactions when hidden */
+}
+
+/* Specific class for showing the modal and its content */
+.modal-overlay.show {
+    opacity: 1;
+}
+
+.modal-overlay > div {
+    /* Apply transition to the modal content itself */
+    transition: all 0.3s ease-in-out;
+}
+
+/* =======================
+   3. Message Box Styles
+======================= */
+/* Styles for fixed message boxes like login/signup status */
+.fixed.top-4.right-4 {
+    min-width: 200px;
+    text-align: center;
+}
+
+/* =======================
+   4. Game & Section Styles
+======================= */
+/* Styles for the hero section, games grid, and support section */
+.hero-section {
+    padding: 2.5rem; /* Consistent padding */
+    border-radius: 1rem; /* Rounded corners */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Deeper shadow */
+}
+
+.hero-section h2 {
+    font-size: 3.5rem; /* Larger heading */
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem; /* Larger paragraph text */
+    margin-bottom: 1.5rem;
+}
+
+/* Adjust game card image sizing */
+.game-card img {
+    width: 100%;
+    height: 12rem; /* Fixed height for consistency */
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+/* =======================
+   5. Payment Details & QR Code Container
+======================= */
+.payment-details {
+    /* General styling for payment method containers */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid; /* Border will be colored by Tailwind classes */
+}
+
+/* Specific styling for QR code container, still useful for holding placeholder */
+#gcash-qr-code-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px; /* Ensure sufficient height even with no QR */
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    color: #9ca3af; /* Text color for the placeholder */
+}
+
+/* Styles for the QR code canvas if it's generated, ensuring it fits */
+#gcash-qr-code-container canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* =======================
+   6. Button Effects
+======================= */
+button {
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* =======================
+   7. Responsive Images
+======================= */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =======================
+   8. Responsive Layout
+======================= */
+@media (max-width: 768px) { /* Changed breakpoint for better tablet support */
+    .container.mx-auto {
+        padding: 1rem;
+    }
+
+    .hero-section {
+        padding: 2rem;
+    }
+
+    .hero-section h2 {
+        font-size: 2.5rem; /* Adjust for smaller screens */
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .hero-section a {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    #games-grid { /* Corrected from .games-grid to #games-grid */
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .modal-overlay > div {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #games-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+    }
+}

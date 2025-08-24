@@ -1,0 +1,247 @@
+/* =======================
+   1. Basic Styles & Reset
+======================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #446d70bb;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =======================
+   2. Header & Navigation
+======================= */
+header {
+    background-color: #000000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+    padding-left: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li a {
+    color: #fffbfb;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: #34495e;
+}
+
+/* =======================
+   3. Main & Product Grid
+======================= */
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Main container for all product categories */
+.main-product-container {
+    padding: 20px;
+}
+
+/* Styling for each product category section (e.g., Rare Pets, Epic Pets) */
+.product-category {
+    margin-bottom: 40px; /* Adds space between each category */
+}
+
+.product-category h2 {
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* The grid container for the list of products within each category */
+.product-list {
+    display: grid;
+    /* This creates a fluid grid that wraps based on item width */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    background-color: #6b6565;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual product item styling */
+.product-item {
+    color: #000000;
+    border-radius: 10px;
+    box-shadow: 5px 2px 1px rgba(31, 110, 131, 0.748);
+    background-color: #f4f4f4; /* Added a background for each item */
+    padding: 15px;
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Styling for the contact form section */
+#support {
+    background-color: transparent #9d8282c7;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    margin-bottom: 40px;
+    /* Added a border to the section as requested */
+    border: 2px solid #ddd;
+}
+
+#support h2 {
+    font-size: 2.25em; /* text-4xl */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1d4ed8; /* blue-700 */
+}
+
+#support p {
+    text-align: center;
+    font-size: 1.125em; /* text-lg */
+    margin-bottom: 1.5rem;
+    color: #4b5563; /* gray-600 */
+}
+
+#support-form {
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* space-y-6 */
+}
+
+#support-form label {
+    display: block;
+    color: #374151; /* gray-700 */
+    font-size: 1.125em; /* text-lg */
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+#support-form input,
+#support-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db; /* gray-300 */
+    border-radius: 0.5rem;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+#support-form input:focus,
+#support-form textarea:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-color: #3b82f6; /* blue-500 */
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+#support-form button {
+    width: 100%;
+    background-color: #2563eb; /* blue-600 */
+    color: #fff;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1.125em;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+#support-form button:hover {
+    background-color: #1d4ed8; /* blue-700 */
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =======================
+   4. Footer
+======================= */
+footer {
+    background-color: #c5dfe1bb;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #333;
+    border-top: 1px solid #ddd;
+}
+
+footer nav {
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+footer nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+footer nav a:hover {
+    color: #007bff;
+}
+
+footer nav a i {
+    margin-right: 5px;
+}
+@media (max-width: 800px) {
+    .contact-input {
+        width: 80vw;
+    }
+
+    .contact-right {
+        display: none;
+    }
+}
